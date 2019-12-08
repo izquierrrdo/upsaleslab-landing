@@ -1,5 +1,5 @@
 @import "slick.css";
-
+@import "slick-theme.css";
 
 * {
     margin: 0;
@@ -7,9 +7,3 @@
     box-sizing: border-box;
 }
 
-.list-item {
-    border: 1px solid red;
-    width: 100px;
-    height: 100px;
-    font-size: 100px;
-}

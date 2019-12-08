@@ -37,7 +37,7 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin ({
-            filename: 'style.css'
+            filename: 'styles.css'
         }),
         // Babel minify webpack plugin
         new BabelMinifyPlugin()
@@ -49,9 +49,27 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'assets/img/[name].[ext]?[hash]'
+                }
+            },
+            {
+                test: /\.(eot|ttf|woff)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'assets/fonts/[name].[ext]?[hash]'
+                }
             }
         ]
     }
