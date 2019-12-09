@@ -51,6 +51,9 @@ body {
     );
     background: -moz-linear-gradient(top, rgba(1, 1, 1, 1), rgba(1, 1, 1, 0));
     background: linear-gradient(to bottom, rgba(1, 1, 1, 1), rgba(1, 1, 1, 0));
+    @include sm {
+      height: 90px;
+    }
     &__container {
       display: flex;
       flex-direction: row;
@@ -58,22 +61,38 @@ body {
       align-items: center;
       justify-content: space-between;
       padding-top: 10px;
+      @include sm {
+        justify-content: center;
+      }
       &__logo {
         & img {
-          width: 210px;
+          width: 250px;
+          @include md {
+            width: 200px;
+          }
         }
       }
       &__menu {
+        @include sm {
+          display: none;
+        }
         & li {
           list-style: none;
           display: inline-block;
-          margin-right: 20px;
+          margin-right: 30px;
+          @include md {
+            margin-right: 20px;
+          }
           &:last-child {
             margin-right: 0;
           }
           & a {
             color: $white;
             text-decoration: none;
+            font-size: 20px;
+            @include md {
+              font-size: 17px;
+            }
             &:hover {
               text-decoration: underline;
             }
@@ -84,31 +103,99 @@ body {
   }
   &__body {
     padding: 150px 0 150px;
+    @include md {
+      padding: 110px 0 110px;
+    }
     &__container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      @include md {
+        flex-direction: column;
+      }
       &__info {
         width: 32%;
         display: flex;
         flex-direction: column;
+        @include md {
+          width: 100%;
+          margin-bottom: 40px;
+        }
         &__title {
           font-size: 47px;
           color: $white;
           margin-bottom: 20px;
+          @include md {
+            font-size: 37px;
+          }
         }
         &__text {
           color: $white;
-          margin-bottom: 20px;
+          margin-bottom: 40px;
           font-weight: 300;
+        }
+        &__btn {
+          @include md {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
       &__video {
         display: flex;
         justify-content: flex-end;
         width: 60%;
+        @include md {
+          justify-content: center;
+          width: 100%;
+        }
       }
+    }
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+  @include md {
+    flex-direction: column;
+  }
+  &__content {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    &__table tr td {
+      font-size: 16px;
+      font-weight: 300;
+      padding: 5px 10px;
+    }
+    &__braket {
+      color: $light-blue;
+      font-weight: 300;
+      font-size: 300px;
+      @include md {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &__video {
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    @include md {
+      justify-content: center;
+      width: 100%;
     }
   }
 }
@@ -119,6 +206,9 @@ body {
   background: -moz-linear-gradient(top, #ffffff, #f4f5fb);
   background: linear-gradient(to bottom, #ffffff, #f4f5fb);
   padding: 100px 0;
+  @include md {
+    padding: 50px 0;
+  }
   &-dark {
     color: $white;
     background: $dark-blue;
@@ -133,8 +223,8 @@ body {
       font-weight: 800;
       font-size: 47px;
       margin-bottom: 15px;
-      @include md {
-        border: 0px solid green;
+      @include sm {
+        font-size: 31px;
       }
       &-light {
         color: #b2c4ff;
@@ -145,7 +235,7 @@ body {
       font-weight: 300;
       font-size: 18px;
       max-width: 920px;
-      margin-bottom: 35px;
+      margin-bottom: 45px;
     }
   }
 }
@@ -156,7 +246,14 @@ body {
   justify-content: space-around;
   align-items: center;
   & img {
+    width: 150px;
     align-self: center;
+    @include md {
+      width: 100px;
+    }
+    @include md {
+      width: 50px;
+    }
   }
 }
 
@@ -165,7 +262,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  input[type="text"] {
+  @include md {
+    flex-direction: column;
+  }
+  input[type="text"],
+  input[type="email"] {
     border: none;
     padding: 0 20px;
     min-width: 250px;
@@ -174,6 +275,12 @@ body {
     border-radius: 50px;
     display: flex;
     align-items: center;
+    font-size: 20px;
+    color: $dark-grey;
+    @include md {
+      min-width: 100%;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -238,6 +345,9 @@ body {
     &__item {
       display: inline;
       list-style: none;
+      @include md {
+        display: block;
+      }
       & a {
         text-decoration: none;
         color: #fff;
@@ -247,6 +357,9 @@ body {
         &::after {
           content: "|";
           padding: 0 20px;
+          @include md {
+            content: "";
+          }
         }
       }
     }
@@ -262,6 +375,9 @@ body {
     border-bottom: 2px solid #999;
     width: 400px;
     margin-bottom: 40px;
+    @include md {
+      width: 200px;
+    }
   }
   &__social {
     margin-bottom: 40px;
@@ -297,6 +413,38 @@ body {
   }
 }
 
+.advantages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  &__item {
+    width: 28%;
+    margin-bottom: 30px;
+    @include md {
+      width: 45%;
+      margin-bottom: 50px;
+    }
+    @include sm {
+      width: 100%;
+    }
+    &__img {
+      width: 80px;
+    }
+    &__title {
+      color: $dark-blue;
+      font-size: 24px;
+      margin-bottom: 5px;
+      font-weight: 800;
+    }
+    &__text {
+      font-size: 17px;
+      font-weight: 300;
+      color: $night-grey;
+    }
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: 1170px;
@@ -309,6 +457,44 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: relative;
+}
+
+.slider__prev {
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  margin-top: -40px;
+  width: 70px !important;
+  height: 70px !important;
+  background: url(../img/back.svg) no-repeat center center;
+  @include md {
+    left: -20px;
+    margin-top: -20px;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+.slider__next {
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  margin-top: -40px;
+  width: 70px !important;
+  height: 70px !important;
+  background: url(../img/back.svg) no-repeat center center;
+  transform: rotate(180deg);
+  @include md {
+    right: -20px;
+    margin-top: -20px;
+    width: 40px !important;
+    height: 40px !important;
+  }
 }
 
 .list-item {

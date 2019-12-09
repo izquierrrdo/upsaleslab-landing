@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Webpack</title>
+
   </head>
 
   <body>
@@ -36,7 +37,9 @@
               <p class="top__body__container__info__text">
                 Your starting point for building successful video products
               </p>
-              <button class="btn btn-color">Request demo</button>
+              <div class="top__body__container__info__btn">
+                <button class="btn btn-color">Request demo</button>
+              </div>
             </div>
             <div class="top__body__container__video">
               <iframe
@@ -62,6 +65,62 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
             inventore reiciendis repellat saepe quae nesciunt quam laborum
             laboriosam minus sed?
+          </div>
+        </div>
+        <div class="advantages">
+          <div class="advantages__item">
+            <img class="advantages__item__img" src="./img/adv1.svg" alt="" />
+            <div class="advantages__item__title">
+              Lipsynk
+            </div>
+            <div class="advantages__item__text">
+                Highly customizable digital expert with Lipsynk technology
+            </div>
+          </div>
+          <div class="advantages__item">
+            <img class="advantages__item__img" src="./img/adv2.svg" alt="" />
+            <div class="advantages__item__title">
+              Fast templating
+            </div>
+            <div class="advantages__item__text">
+              Video template are ready-to-go
+            </div>
+          </div>
+          <div class="advantages__item">
+            <img class="advantages__item__img" src="./img/adv3.svg" alt="" />
+            <div class="advantages__item__title">
+              Multilingual
+            </div>
+            <div class="advantages__item__text">
+                26 languages in the system, 117 Speakers
+            </div>
+          </div>
+          <div class="advantages__item">
+            <img class="advantages__item__img" src="./img/adv4.svg" alt="" />
+            <div class="advantages__item__title">
+              Services integration
+            </div>
+            <div class="advantages__item__text">
+                Full YouTube, Vimeo and Google Drive integration
+            </div>
+          </div>
+          <div class="advantages__item">
+            <img class="advantages__item__img" src="./img/adv5.svg" alt="" />
+            <div class="advantages__item__title">
+              Personalisation
+            </div>
+            <div class="advantages__item__text">
+                Personalized videos and custom Integrations with CRM systems
+            </div>
+          </div>
+          <div class="advantages__item">
+            <img class="advantages__item__img" src="./img/adv6.svg" alt="" />
+            <div class="advantages__item__title">
+              360
+            </div>
+            <div class="advantages__item__text">
+                360° Creation Video for Amazon and Ebay
+            </div>
           </div>
         </div>
         <div class="cta-container">
@@ -157,11 +216,24 @@
             Request demo
           </h2>
         </div>
-        <div class="request-form">
-          <input type="text" />
-          <input type="text" />
-          <button class="btn btn-color">Request demo</button>
-        </div>
+        <form action="form.php" id="myform" class="request-form">
+          <input id="name" name="name" type="text" placeholder="name" />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="email@site.com"
+          />
+
+          <script src="https://www.google.com/recaptcha/api.js?render=6LcD4sYUAAAAAB1lcsNRsNB8wSjsq2-zX_5rDvIr"></script>
+          <input
+            type="hidden"
+            class="hiddenRecaptcha required"
+            name="hiddenRecaptcha"
+            id="hiddenRecaptcha"
+          />
+          <input class="btn btn-color" type="submit" value="Request demo" />
+        </form>
       </div>
     </article>
 
@@ -175,6 +247,47 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
             inventore reiciendis repellat saepe quae nesciunt quam laborum
             laboriosam minus sed?
+          </div>
+        </div>
+        <div class="features">
+          <div class="features__content">
+            <div class="features__content__table">
+              <table>
+                <tr>
+                  <td>Total registered users</td>
+                  <td>18845</td>
+                </tr>
+                <tr>
+                  <td>HQ single videos created</td>
+                  <td>17211</td>
+                </tr>
+                <tr>
+                  <td>HQ videos made using API</td>
+                  <td>191860</td>
+                </tr>
+                <tr>
+                  <td>The amount received</td>
+                  <td>191860 EUR</td>
+                </tr>
+                <tr>
+                  <td>Videos produced</td>
+                  <td>209271</td>
+                </tr>
+              </table>
+            </div>
+            <div class="features__content__braket">
+              }
+            </div>
+          </div>
+          <div class="features__video">
+            <iframe
+              width="600"
+              height="400"
+              src="https://www.youtube.com/embed/5zC7ULJVn4M"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
         <div class="cta-container">
@@ -232,5 +345,6 @@
         ©Upsales Lab
       </div>
     </footer>
+
   </body>
 </html>
