@@ -1,0 +1,19 @@
+// Small tablets and large smartphones
+$screen-sm-max: 576px;
+
+// Small tablets
+$screen-md-max: 768px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}

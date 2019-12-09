@@ -45,6 +45,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(html)$/,
+                use: ['html-loader']
+            },
+            {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
@@ -61,14 +65,15 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'assets/img/[name].[ext]?[hash]'
+                    name: 'assets/img/[name].[ext]?[hash]',
+                    esModule: false,
                 }
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'assets/fonts/[name].[ext]?[hash]'
+                    name: 'assets/fonts/[name].[ext]?[hash]',
                 }
             }
         ]
